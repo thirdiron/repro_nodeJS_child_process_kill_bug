@@ -1,0 +1,13 @@
+{
+  "name": "undying_child_process",
+  "version": "0.0.1",
+  "description": "expressJS server that doesn't die when its a child process and kill method is called",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+    "express": "^4.4.4"
+  }
+}
