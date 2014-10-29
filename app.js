@@ -1,10 +1,8 @@
 var child_process = require('child_process');
 
+var myUnkillableChild;
 
-
-describe('Fixture that needs a stub dataservice as a child process', function() {
-  before(function(done) {
-    myUnkillableChild =
+myUnkillableChild =
       child_process.exec('node ./child_root/child.js',
                      {},
                      function(err, stdout, stderr) {
@@ -13,23 +11,16 @@ describe('Fixture that needs a stub dataservice as a child process', function() 
                        console.log('My child process should be dead');
                      });
 
-      setTimeout(function() {
-        // Wait for a few seconds to ensure the server is up and running
-        // Then continue.
-        done();
-      }, 3000)
-  });
+console.log('Hello world! A child should be running now');
+debugger;
 
-  it('Mocha should run this test function before tearing down', function(done) {
-    debugger;
-    console.log('Hello world!');
-    done();
-  });
+setTimeout(function() {
+  // Wait for a few seconds to ensure the server is up and running
+  // Then kill it and exit
+  console.log('Sending SIGTERM signal to child process!');
+  myUnkillableChild.kill('SIGTERM');
+  debugger;
+  process.exit(0);
+}, 3000);
 
-  after(function(done) {
-    console.log('Sending SIGTERM signal to child process!');
-    myUnkillableChild.kill('SIGTERM');
-    done();
-  });
 
-});
