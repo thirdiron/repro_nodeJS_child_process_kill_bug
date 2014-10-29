@@ -2,8 +2,6 @@ var child_process = require('child_process');
 
 
 
-var myUnkillableChild;
-
 describe('Fixture that needs a stub dataservice as a child process', function() {
   before(function(done) {
     myUnkillableChild =
@@ -34,5 +32,4 @@ describe('Fixture that needs a stub dataservice as a child process', function() 
     done();
   });
 
-});
 
