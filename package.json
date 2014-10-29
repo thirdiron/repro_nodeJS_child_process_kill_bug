@@ -1,0 +1,22 @@
+{
+  "name": "repro_nodeJS_child_process_kill_bug",
+  "version": "1.0.0",
+  "description": "demo app to try to reproduce child_process.kill() issue",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thirdiron/repro_nodeJS_child_process_kill_bug.git"
+  },
+  "author": "Mike Lang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thirdiron/repro_nodeJS_child_process_kill_bug/issues"
+  },
+  "homepage": "https://github.com/thirdiron/repro_nodeJS_child_process_kill_bug",
+  "scripts": {
+    "install": "(cd child_root && npm install)"
+  }
+}
