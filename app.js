@@ -32,4 +32,4 @@ describe('Fixture that needs a stub dataservice as a child process', function() 
     done();
   });
 
-
+});
