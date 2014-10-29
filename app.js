@@ -7,8 +7,8 @@ var myUnkillableChild;
 describe('Fixture that needs a stub dataservice as a child process', function() {
   before(function(done) {
     myUnkillableChild =
-      child_process.exec('node ./app.js',
-                     {cwd:process.cwd() + '/child_root'},
+      child_process.exec('node ./child_root/child.js',
+                     {},
                      function(err, stdout, stderr) {
                        debugger;
                        if (err) console.log(err);

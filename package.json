@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/thirdiron/repro_nodeJS_child_process_kill_bug",
   "scripts": {
-    "install": "(cd child_root && npm install)"
+    "install": "(cd child_root && npm install)",
+    "test": "(mocha app.js -t 10000 && ps aux | grep node && echo && echo Why is node ./child_root/child.js still alive???)"
   }
 }
